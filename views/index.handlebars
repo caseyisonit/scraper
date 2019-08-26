@@ -1,9 +1,38 @@
-<div id="wrapper">
-      <h1>Note Scraper</h1>
-      <h2><i>If you can do this...the homework should be no problem.</i></h2>
-      {{#each data}}
-      <h3 data-id="{{_id}}">{{title}}</h3>
-      <a href="{{link}}"><span>Read Article</span></a>
-      {{/each}}
-      <div id="notes"></div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Note Scraper</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="/scrape">Scrape <span class="sr-only">(current)</span></a>
     </div>
+  </div>
+</nav>
+<div id="wrapper">
+  <div class="container">
+    <div class="row">
+      {{#each data}}
+      <div class="col-sm-4">
+        <div class="card">
+          {{#if image}}
+          <img class="card-img-top" data-id="{{_id}}" src="{{image}}" alt="{{title}}">
+          {{else}}
+          <img class="card-img-top" data-id="{{_id}}"
+            src="https://static.tumblr.com/72708a11373af460515131cf90e3e39b/tl1lb4o/eXJoy4x2e/tumblr_static_7dh6aaoeszcw0gk4w8gsco80g.png"
+            alt="{{title}}">
+          {{/if}}
+          <div class="card-body">
+            <h5 class="card-title" data-id="{{_id}}">{{title}}</h5>
+            <a href="{{link}}" target="_blank" class="card-link">Read Article</a>
+            <a href="#" class="card-link comments-link" data-id="{{_id}}">Comments</a>
+            <div class="notes{{_id}}"></div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+
+    </div>
+  </div>
+</div>

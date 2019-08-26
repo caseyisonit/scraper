@@ -28,14 +28,14 @@ app.use(express.json());
 // Make public a static folder
 app.use(express.static("public"));
 
-app.engine("handlebars", exphbs({defaultLayout: "main"}));
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 //connecting controllers
 app.use("/", scraperController);
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost/scraper", { useNewUrlParser: true });
 
 
 // Start the server
