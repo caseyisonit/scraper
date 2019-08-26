@@ -34,8 +34,11 @@ app.set("view engine", "handlebars");
 //connecting controllers
 app.use("/", scraperController);
 
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scraper";
+
+
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/scraper", { useNewUrlParser: true });
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 
 // Start the server
