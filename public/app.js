@@ -29,7 +29,7 @@ $(document).on("click", ".comments-link", function () {
       // A textarea to add a new note body
       $(".notes" + thisId).append("<textarea id='bodyinput' name='body'></textarea>");
       // A button to submit a new note, with the id of the article saved to it
-      $(".notes" + thisId).append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
+      $(".notes" + thisId).append("<button class='btn btn-info' data-id='" + data._id + "' id='savenote'>Save Note</button>");
 
       // If there's a note in the article
       if (data.note) {
@@ -37,7 +37,7 @@ $(document).on("click", ".comments-link", function () {
         data.note.forEach(note => {
         $(".notes" + thisId).append(`<div class="addedComment"><h3 class="addedTitle">` + note.title + `</h3></div>`);
         // Place the body of the note in the body textarea
-        $(".addedComment").append(`<p class="addedBody">` + note.body + `</p>`);
+        $(".addedComment +").append(`<p class="addedBody">` + note.body + `</p>`);
       })
     };
     });

@@ -1,5 +1,5 @@
 body {
-    background-color:#f2f6d0;
+    background-color:papayawhip;
     width: 100%;
     margin: 0 auto;
 }
@@ -22,15 +22,22 @@ body {
     margin-bottom: 30px;
 }
 
-#notes {
+.card-link {
+    color: #17a2b8;
+}
+
+/* #notes {
     float:right;
     width:30%;
-}
+} */
 
 input,textarea {
     display:block;
     width:100%;
-    background-color:#fcf5c7;
+    background-color:white;
+    margin-bottom: 20px;
+    border-color: #eeeeee;
+
 }
 
 input {
@@ -41,4 +48,14 @@ input {
 textarea { 
     height:200px;
     font-size:18px;
+}
+
+.navbar-brand {
+    font-family: 'Vesper Libre', serif;
+    font-size: 36px;
+}
+
+.card-title {
+    font-family: 'Vesper Libre', serif;
+    font-size: 24px;
 }
